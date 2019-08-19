@@ -1,17 +1,17 @@
 class Letter {
     constructor(val){
-        this.val = val || " ",
+        this.letterletterTal = val || " ",
         this.isGuessed = false,
-        this.displayfunc = function(){
+        this.letterDisplay = function(){
             if (this.isGuessed){
                 return this.val;
             }else {
-                return " _ ";
+                return "_";
             }
         },
-        this.guessFun = function(userguess){
+        this.letterGuess = function(userguess){
             userguess = userguess.toLowerCase()
-            lowerVal = this.val.toLowerCase()
+            lowerVal = this.letterVal.toLowerCase()
             if (lowerVal === userguess){
                 this.isGuessed = true;
                 console.log("you got it right!")
@@ -26,8 +26,8 @@ module.exports = Letter
 /*     Testing
 letterT = new Letter("t")
 console.log(letterT)
-letterT.guessFun("v")
-letterT.guessFun("T")
-letterT.guessFun("t")
-letterT.guessFun(letterT.val)
+letterT.letterGuess("v")
+letterT.letterGuess("T")
+letterT.letterGuess("t")
+letterT.letterGuess(letterT.val)
 */
