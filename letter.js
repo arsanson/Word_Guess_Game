@@ -10,11 +10,24 @@ class Letter {
             }
         },
         this.guessFun = function(userguess){
-            if (this.val === userguess.toLowerCase){
+            userguess = userguess.toLowerCase()
+            lowerVal = this.val.toLowerCase()
+            if (lowerVal === userguess){
                 this.isGuessed = true;
+                console.log("you got it right!")
             } else{
-                console.log("wrong guess!")
+                console.log("wrong guess! Your guess was "+userguess+" but the answer was "+val)
             }
         }
     }
 }
+module.exports = Letter
+
+/*     Testing
+letterT = new Letter("t")
+console.log(letterT)
+letterT.guessFun("v")
+letterT.guessFun("T")
+letterT.guessFun("t")
+letterT.guessFun(letterT.val)
+*/
